@@ -1,0 +1,10 @@
+ public class Main {
+     // main executable
+     public static void main(String[] args) {
+         //Printing of Text
+         System.out.println("My Name is Jamie Stewart!");
+         System.out.println("I am studying Computer Sceince");
+         System.out.println("I am 19 years old");
+         System.out.println("I live in castlederg");
+     }
+ }
