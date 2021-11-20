@@ -1,0 +1,93 @@
+import uulib.Console;
+
+public class Main {
+
+    public static void question1() {
+        // User is prompted to enter a number and hte multiple they desire to see if it's a multiple off
+        int n = Console.getInt("Please enter the number: ");
+        int multiple = Console.getInt("Please enter the multiple: ");
+        if (n % multiple == 0) {
+            System.out.println(n + " is a multiple of " + multiple);
+        } else
+            System.out.println(n + " is not a  multiple of " + multiple);
+    }
+
+    public static void question2() {
+        // Price/Tender input to console - This question 2 also answers the bellow question 3
+        double Item_Price = Console.getDouble("Enter price £ ");
+        double Sum_tendered = Console.getDouble("Enter tender £ ");
+        /* Checking the data entered to ensure it complies with the if statment bellow 
+        ensuring that the correct ammount is given and other events such as to much change or not enough
+        */
+        if (Sum_tendered < Item_Price) {
+            double needed_Change = Item_Price - Sum_tendered;
+            System.out.println("A further £" + (String.format("%.2f", needed_Change) + " is required"));
+        } else if (Sum_tendered == Item_Price) {
+            System.out.println("No change due");
+        } else if (Sum_tendered > Item_Price) {
+            double Change = Sum_tendered - Item_Price;
+            System.out.println(String.format("Your change is £" + "%.2f", Change));
+        }
+    }
+
+    // public static void question3() {
+    // submit solution to separate project titled Practical5-q3
+    // }
+
+    public static void question4() {
+        // year input in consol
+        int Year = Console.getInt("Enter Year: ");
+        // Check for century
+        if (Year % 400 == 0) {
+            System.out.println(Year + " That is a leap year");
+        } else if (Year % 100 == 0) {
+            System.out.println(Year + " That is a century");
+        } else if (Year % 4 == 0) {
+            System.out.println(Year + " Is a leap year");
+        } else if (Year % 4 != 0) {
+            System.out.println(Year + " Is not a leap year");
+        }
+    }
+
+    public static void question5() {
+       // Prompting user to enter the integers
+        int A = Console.getInt("Enter First Number: ");
+        int B = Console.getInt("Enter Second Number: ");
+        int C = Console.getInt("Enter Third Number: "); 
+        // Finding the largest integer the user entered
+        int largest;
+        if ((A>B) && (A > C)) {
+            largest= A;
+        } else if ((B>A) && (B > C)) {
+            largest = B;
+        } else {
+            largest = C;
+        
+        }
+        // Finding the smallest integer the user entered
+       int smallest;
+        if ((A<B) && (A < C)) {
+            smallest= A;
+        }else if ((B<A) && (B < C)) {
+            smallest = B;
+        }else {
+            smallest = C;
+        
+        }
+        // Printing out the Largest/Smallest number 
+        System.out.println("The Largest Number is  " + largest);
+        System.out.println("The Smallest Number is " + smallest);
+
+    }
+
+    // program execution starts here
+    public static void main(String[] args) {
+        // uncomment the sub-program (method)that you wish to exectute
+
+         //question1();
+         //question2();
+         //question4();
+           question5();
+
+    }
+}
