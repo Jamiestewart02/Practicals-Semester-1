@@ -1,0 +1,151 @@
+import uulib.Console;
+public class Main {
+
+    // q1 print verse method can be created here
+    public static void question1() { // This question 1 Solves Question 4 also.
+        printVerse("Dog","Woof");
+        printVerse("Duck","Quack");
+        printVerse("Horse","Nea");
+
+  }
+
+    public static void printVerse(String animal, String sound) {
+
+        // Using the console this prints the nursery rhyme verses with the parameters
+        System.out.println("Old McDonald had a farm, E-I-E-I-O" + "\n" + "And on the farm he had a " + animal
+                + ", E-I-E-I-O " + "\n" + "With a " + sound + " " + sound + " here and a " + sound + " " + sound
+                + " there" + "\n" + "Here a " + sound + ", there a " + sound + ", everywhere a " + sound + " " + sound
+                + "\n" + "Old McDonald had a farm, E-I-E-I-O " + "\n");
+    }
+
+    public static void question2() {
+        boolean result;
+        final char SENTINEL = '.'; // Use for SENTINEL loop
+        int count = 0; // Counter is set to 0 for use in loop
+        // Asking user for their input
+        char Character = Console.getChar("Enter character(enter . to stop): ");
+        while (Character != SENTINEL) { // This loop will start as long as "." is not entered
+            result = isVowel(Character);
+            if (result == true) {
+                // adds 1 to count if it is a vowel because this method returns true if it is a
+                // vowel
+                count = count + 1;
+            }
+            // Restarting loop
+            Character = Console.getChar("Enter character: ");
+        }
+        // Output of how many vowels the user entered
+        System.out.println("found " + count);
+
+    }
+    
+    public static boolean isVowel(char Character) {
+        /* Checks if user input was a Vowel 
+            if in the event it is not a vowel it will defualt to false as show below line 28*/
+        boolean isVowelCheck = false;
+
+        // if statement that cheks users Character and will execute if it contains a vowel
+        if (Character == 'A' || Character == 'a' || Character == 'E' || Character == 'e' || Character == 'I' || Character == 'i' || Character == 'O'
+                || Character == 'o' || Character == 'U' || Character == 'u') {
+            // boolean variable from aboves value is changed to true;
+            isVowelCheck = true;
+        }
+        return isVowelCheck; // Value is returned to where method was called
+    }
+
+    public static void question3() {
+        // Declaration of Variables
+        final int SENTINEL = 0;
+        int largestNum = 0;
+        int counter = 0; // Not include in final submission 
+        // Gaining user input
+        int num = Console.getInt("Enter a number(enter 0 to close): ");
+        while(num!=SENTINEL){
+            largestNum = largest(num,largestNum);
+            num = Console.getInt("Enter a number(enter 0 to close): ");
+            counter++; // Testing new methods
+        }
+        // Printing The largest number that was found
+        System.out.println("The Largest number that you have entered is "+largestNum);
+        System.out.println("Times around " + counter );
+    }
+
+    public static int largest(int a, int b){
+        // Checking for the largest number found
+        int LargestFound;
+        if(a>b){ 
+            LargestFound = a;
+        }else{
+            LargestFound = b;
+        }
+        return LargestFound;
+    }
+
+
+    // q4 generate verse method can be created here
+
+    public static void question4_optional() {
+        String Verse = verses("Dog","Woof")+verses("Cow","Moo")+verses("Duck","Quack")+verses("Sheep","Baa");
+        System.out.println(Verse);
+  }
+
+    public static String verses(String animal, String sound) {
+
+        // Using the console this prints the nursery rhyme verses with the parameters
+        String Verse = "Old McDonald had a farm, E-I-E-I-O" + "\n" + "And on the farm he had a " + animal
+                + ", E-I-E-I-O " + "\n" + "With a " + sound + " " + sound + " here and a " + sound + " " + sound
+                + " there" + "\n" + "Here a " + sound + ", there a " + sound + ", everywhere a " + sound + " " + sound
+                + "\n" + "Old McDonald had a farm, E-I-E-I-O " + "\n\n";
+
+        return Verse;
+    }
+
+    // q4 rollTwoOf method can be created here
+
+    public static void question5_optional() {
+        int counter = 0;
+        boolean same;
+        int n1 = 0;
+        int n2 = 0;
+        char Play = Console.getChar("Wanna play? (Y/N)");
+        while (Play == 'Y') {
+            counter = counter + 1;
+            n1 = (int) (Math.random() * 6 + 1);
+            n2 = (int) (Math.random() * 6 + 1);
+            same = IsSame(n1, n2);
+            if (same == false) {
+                System.out.println("The first dice rolled " + n1);
+                System.out.println("The second dice rolled " + n2);
+            } else if (same == true) {
+                System.out.println(n1 + " SAME " + n2);
+                System.out.println("it took " + counter +  " times to get it right");
+            }
+            Play = Console.getChar("Wanna play? (Y/N)");
+            
+        }
+    }
+
+    public static boolean IsSame(int n1, int n2) {
+        boolean IsSame = false;
+
+        // if statement that cheks users Character and will execute if it contains a
+        // vowel
+        if (n1 == n2) {
+            // boolean variable from aboves value is changed to true;
+            IsSame = true;
+        }
+        return IsSame; // Value is returned to where method was called
+
+    }
+    // main method program execution starts here
+    public static void main(String[] args) {
+
+         //question1();
+        //question2();
+         //question3();
+
+        //question4_optional(); // This was completed with question 1
+         question5_optional();
+
+    }
+}
