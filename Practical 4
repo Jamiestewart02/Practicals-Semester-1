@@ -1,0 +1,61 @@
+import uulib.Console;
+
+public class Main {
+
+    public static void question1() {
+        // promting user
+        int length = Console.getInt("Enter length ");
+        int breadth = Console.getInt("Enter Breadth ");
+        // Calculations
+        int perimeter = 2 * (breadth + length);
+        int area = (length) * (breadth);
+        // Printing answer
+        System.out.println("Area:" + area +  "\n" + "Perimeter: " + perimeter);
+    }
+
+    public static void question2() {
+        String name = Console.getString("Please enter Your Name: ");
+         System.out.println("Hello " + name + " Welcome.");
+            
+    }
+
+    public static void question3() {
+        final double VATRATE = 20.0;
+        int Purchase_Price = Console.getInt("Please enter the Purchase Price ");
+        double Vat_Ammount = Purchase_Price * (VATRATE / 100);
+        System.out.println(String.format("Total ammout of VAT " + "£ " + "%.2f",Vat_Ammount));
+    }
+
+    public static void question4() {
+        int two_Pounds = Console.getInt("£2: ");
+        int one_Pounds = Console.getInt("£1: ");
+        int Fifty_Pennys = Console.getInt("50p: ");
+        int twenty_Pennys = Console.getInt("20p: ");
+        int ten_Pennys = Console.getInt("10p: ");
+        int five_Pennys = Console.getInt("5p: ");
+        int two_Pennys = Console.getInt("2p: ");
+        int one_Pennys = Console.getInt("1p: ");
+        
+        double Total_Change = (two_Pounds * 2)  + (one_Pounds) + (Fifty_Pennys * 0.5) + (twenty_Pennys * 0.2) + (ten_Pennys * 0.1) + (five_Pennys * 0.05) + (two_Pennys * 0.02)  + (one_Pennys * 0.01); 
+        System.out.println(String.format("Total change is " +  "£ " + "%.2f",Total_Change));
+
+    }
+
+    public static void question5() {
+        double adjacent = Console.getDouble("Please enter the Adjacent length ");
+        double opposite = Console.getDouble("Please enter the Opposite length ");
+        double Hypotenuse= Math.sqrt((adjacent*adjacent)+(opposite*opposite));
+        System.out.println(String.format("The length of the Hypotenuse is  " + "%.1f",Hypotenuse));
+    }
+
+    public static void main(String[] args) {
+        // uncomment the sub-program (method)that you wish to exectute
+        
+        //question1();
+        //question2();
+        //question3();
+        //question4();
+        //question5();
+        
+    }
+}
