@@ -1,0 +1,11 @@
+class Main {
+
+    // Click Green Run button to see instructions on how to exectute each question solution
+    public static void main(String[] args) {
+        System.out.print("\nINSTRUCTIONS\n\nTo execute each question solution. Open the Shell window and type in the following ");    
+        System.out.println("(replacing 1 with the question number 2, 3, 5 in example below:)\n");    
+        System.out.println("javac Question1.java\n");  
+        System.out.println("Then assuming there are no errors (if errors then fix and re-enter previous command):\n");
+        System.out.println("java Question1");    
+    }
+}
