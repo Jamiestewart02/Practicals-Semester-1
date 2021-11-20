@@ -100,3 +100,82 @@ public class Main {
     }
 
 }
+// QUESTION 3 anser starts here but must be executed in a seperate file:
+// question 3 has been moved to a separate class to
+// a. reduce complexity of the Main class by removing the optional question
+// b. show how we can organise our code in separate classes
+
+import uulib.Console;
+
+public class BMI {
+
+    // =========== question 3 optional ================
+
+    // return bmi value or 0 if weight or height are <= 0
+    public static double calcBMI(double weight, double height) { 
+       // replace return statement below with your algorithm
+        if (weight <= 0 || height <= 0) {
+         return 0;
+    } else {
+        double bmi = weight / (height * height);
+        return bmi;
+        // or alternately simply return expression result
+        // return weight / (height * height); 
+    }
+}
+    // return string representation of the bmi value “normal”, “overweight”, “underweight” or “invalid” if the bmi is 0
+    public static String getBMIResult(double bmi) {
+        final int UNDER = 20, OVER = 30;       
+
+    // now return the string result based on the bmi value
+    if (bmi == 0) {
+         return "invalid";
+    } else if (bmi < UNDER) {
+        return "underweight";
+    } else if (bmi > OVER) {
+        return "overweight";
+    } else {
+        return "normal";
+    }
+}
+    // question 3
+    public  static void question3_optional() {
+        int option = Console.getInt("0-test plan 1-Calc BMI: ");
+        if (option == 0) {
+      testPlan();
+   } else {
+      double weight = Console.getDouble("enter weight: ");
+      double height = Console.getDouble("enter height: ");
+      double bmi =  calcBMI(weight, height);
+      String bmiResult = getBMIResult(bmi);
+      System.out.println("BMI Result is " + bmiResult);   
+   } 
+}
+    // =============================================================================================
+    // =========== Following methods allow us to test our BMI value methods defined above ==========
+
+    // test plan action method to verify methods work correctly
+    public static void testPlan() {
+        bmiTest(60.0, 1.75, "underweight");    
+        bmiTest(51.5, 1.6,  "normal");         
+        bmiTest(102.0, 1.8, "overweight");  
+        bmiTest(97.5, 1.9,  "normal");  
+        bmiTest(-200.0, 2.0,"invalid"); 
+        bmiTest(167, -1.4,  "invalid");
+    }
+    
+    // test bmi using supplied weight & height and check that generated result
+    // matches the expectedResult (overweight, underweight, normal or invalid)
+    public static void bmiTest(double weight, double height, String expectedResult) {
+        double bmi    = calcBMI(weight, height);    // calculate the bmi
+        String result = getBMIResult(bmi);          // generate the string result of bmi
+
+        // we must use .equals to test string equality (== does not work on strings)
+        if (result.equals(expectedResult)) {
+           System.out.println("Success - " + bmi + " " + expectedResult);
+        } else {
+           System.out.println("FAILURE - " + bmi + " " + expectedResult); 
+        }
+    }
+
+}
