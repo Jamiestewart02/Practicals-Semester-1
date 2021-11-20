@@ -1,0 +1,84 @@
+/**
+ * Title: Practical 3 Solutions Author: Jamie Stewart Date: 05/10/21
+ */
+public class Main {
+
+    public static void question1() {
+        double height = 1.86;
+        int age = 19;
+        char Initial = 'A';
+        boolean Have_pet = true;
+
+        System.out.println("Height is " + height + "m");
+        System.out.println("Age is " + age);
+        System.out.println("Initial " + Initial);
+        System.out.println("Have pet " + Have_pet);
+
+    }
+
+    public static void question2() {
+        double Price = 67.0;
+        double vat = vat = (Price / 100) * 20.0;
+        System.out.println("VAT on the price of £" + Price + "Vat to be paid is £" + vat);
+
+    }
+
+    public static void question3() {
+        double Circumfrance;
+        double area;
+        int Radius = 4;
+        Circumfrance = 3.14 * (Radius * Radius);
+        System.out.println("The Circumfrance is " + Circumfrance);
+        area = 3.14 * Radius * 2;
+        System.out.println("The Area is " + area);
+
+    }
+
+    public static void question4() {
+        double Celsius = 20;
+        double fahrenheit;
+        fahrenheit = (9.0 / 5.0) * Celsius + 32;
+        System.out.println("the Temperature is " + fahrenheit + " degrees fahrenheit");
+    }
+
+    public static void question5() {
+        // Storing of initial intergers
+        int a = 7;
+        int b = 9;
+        int c = 13;
+        // Printing Initial intergers
+        System.out.println("A = " + a + " , B = " + b + " and C = " + c);
+
+        // // Swaping around the intergers
+        // int temp = c;
+        // c = b;
+        // b = a;
+        // a = temp;     
+        // // Printing Swapped around intergers
+        // System.out.println("After Swap a = " + a + " b = " + b + " and c = " + c);
+
+        // Sum of A,B, and C
+        a = a + b + c;
+        // B to have value of a
+        b = a - (b + c);
+        // C to have value of b
+        c = a - (b + c);
+        // A to have value of c
+        a = a - (b + c);
+
+        // Printing of new swapped around intergers 
+        System.out.println("A = " + a + " , B = " + b + " and C = " + c);
+    }
+    // program starts here
+    public static void main(String[] args) {
+
+        // now uncomment the relevant sub-program to execute solution to a question
+
+        // question1();
+        //question2();
+        // question3();
+        // question4();
+         question5();
+
+    }
+}
