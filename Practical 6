@@ -1,0 +1,88 @@
+import uulib.Console;
+
+public class Main {
+
+    public static void question1() {
+        final double CONVFACTOR = 9.0 / 5.0; // conversion factor
+        final int SENTINEL = -99;
+        // input celsius
+        int celsius = Console.getInt("Temperature in Celsius ");
+        while (celsius != SENTINEL) {
+            // calculate fahrenheit
+            double fahrenheit = CONVFACTOR * celsius + 32;
+            // print results
+            System.out.println(celsius + "C is " + String.format("%.1f", fahrenheit) + "F");
+            celsius = Console.getInt("Temperature in Celsius ");
+        }
+
+    }
+
+    public static void question2() {
+        int counter = 0;
+        int num = Console.getInt("Please enter the desired number: ");
+        // While loop to print the number up 12 times 
+        while (counter < 12) {
+            counter = counter + 1;
+            int Time_Table = num * counter;
+            System.out.println(String.format(num + " * " + counter + "= " + "%2d",Time_Table));
+        }
+    
+    }
+
+    public static void question2_option() {
+        int counter = 0;
+        int num = Console.getInt("Please enter the desired number: ");
+        // Checks if the user has entered a number that is not greater than 12
+        while ((num > 12) || (num <= 0)) {
+            num = Console.getInt("Please a number above 0 and below 13: ");
+        // Carry's out the multiplication
+        } while (counter < 12) {
+            counter = counter + 1;
+            int Time_Table = num * counter;
+            System.out.println(String.format(num + " * " + counter + "= " + "%2d",Time_Table));
+        }
+
+    }
+
+    // public static void question3() {
+    // this question should be submitted to separate Practical6-q3 repl as your
+    // weekly assessment </
+    // }
+
+    public static void question4() {
+       final int SENTINEL = 0;
+       int counter = 0;
+        final int numToGuess = (int) (Math.random() * 100 + 1); // number calc
+        System.out.println(numToGuess); // Cheating ;)
+        int guess = Console.getInt("Enter a guess: "); // user inut for guess
+        while (guess != 0 ) {
+        counter = counter + 1;
+        if (guess== numToGuess) {
+            System.out.println("You guessed correctly the number is " + numToGuess); // Correct Guess
+            System.out.println("You Took " + counter + " Guesses");
+        break;
+        } else if (guess < numToGuess) {
+            System.out.println("You guessed too low"); // to low
+        } else if (guess > numToGuess) {
+            System.out.println("You guessed too high"); // TO high
+        } // END
+        guess = Console.getInt("Enter a guess: ");
+        }
+    }
+    public static void question4_option() {
+        // Solved in Question4 above.
+    }
+
+    public static void main(String[] args) {
+        // uncomment the sub-program (method)that you wish to exectute
+
+        //question1();
+
+         //question2();
+         //question2_option();
+
+         question4();
+        //question4_option();
+
+    }
+}
